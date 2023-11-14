@@ -8,7 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
 }
 
-// TODO: add initial configs
 // TODO: add initial style variables
 // TODO: add header component
 // TODO: add nav menu component with icons
