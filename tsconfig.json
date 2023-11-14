@@ -18,11 +18,11 @@
         "target": "es2020",
         "module": "es2020",
         "paths": {
-            "@app/*": ["src/app/*"],
-            "@assets/*": ["src/assets/*"],
-            "@core/*": ["src/core/*"],
-            "@environments/*": ["src/environments/*"],
-            "@shared/*": ["src/shared/*"]
+            "@app/*": ["app/*"],
+            "@assets/*": ["assets/*"],
+            "@core/*": ["core/*"],
+            "@environments/*": ["environments/*"],
+            "@shared/*": ["shared/*"]
         },
         "lib": [
             "es2020",
