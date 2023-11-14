@@ -6,6 +6,12 @@ export type UserT = {
     url: string | null,
 }
 
+export type TaigaTabsT = {
+    label: string,
+    value: string,
+    icon: string,
+}
+
 export const fakeUser: UserT = {
     firstName: 'John',
     lastName: 'Doe',

@@ -1,0 +1,15 @@
+<tui-tabs
+    class="tui-space_left-4"
+    [(activeItemIndex)]="activeItemIndex">
+    <button
+        *ngFor="let tab of tabs"
+        tuiTab
+        (click)="onClick(tab)"
+    >
+        <tui-svg
+            [src]="tab.icon"
+            class="tui-space_right-2"
+        ></tui-svg>
+        {{ tab.label }}
+    </button>
+</tui-tabs>

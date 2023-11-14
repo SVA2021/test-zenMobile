@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-root',
@@ -8,8 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
 }
 
-// TODO: add nav menu component with icons
-// TODO: add home page module with pages
 // TODO: add edit profile page and find where to put link to it
 // TODO: add auth page
 // TODO: add fake auth service
