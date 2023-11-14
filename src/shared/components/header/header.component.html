@@ -1,0 +1,35 @@
+<header class="header">
+    <ng-container *ngIf="user; else noUser;">
+        <p class="header_username">
+            <tui-badge
+                status="success"
+                [value]="user.firstName + ' ' + user.lastName"
+            >
+            </tui-badge>
+        </p>
+        <div class="header_links-wrapper">
+            <a class="header_link"
+               routerLink="/profile"
+               icon="tuiIconUser"
+               tuiLink
+            >
+                Профиль
+            </a>
+            <a class="header_link"
+               routerLink="/logout"
+               icon="tuiIconLogOut"
+               tuiLink
+            >
+                Выйти
+            </a>
+        </div>
+    </ng-container>
+    <ng-template #noUser>
+        <p class="no-auth">
+            <tui-badge
+                status="error"
+                [value]="'Не авторизован'">
+            </tui-badge>
+        </p>
+    </ng-template>
+</header>
