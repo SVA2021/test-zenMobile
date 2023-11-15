@@ -8,7 +8,6 @@ import {Component} from '@angular/core';
 export class AppComponent {
 }
 
-// TODO: add edit profile page and find where to put link to it
 // TODO: add auth page
 // TODO: add fake auth service
 // TODO: add error handling and fake error generation

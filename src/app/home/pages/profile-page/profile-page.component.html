@@ -1,1 +1,87 @@
-<p>profile-page works!</p>
+<section class="full-page">
+    <div class="form-wrapper">
+        <h2 class="tui-form__header_margin-bottom_small">
+            Редактирование профиля
+        </h2>
+        <div class="tui-form" [formGroup]="profileForm">
+            <label [tuiLabel]="'E-mail'" class="tui-form__row">
+                <tui-input formControlName="email"
+                           tuiTextfieldSize="s"
+                           [tuiTextfieldCleaner]="true"
+                           [pseudoFocus]="getError(profileForm.controls.email)"
+                >
+                    Введите email
+                    <input
+                        tuiTextfield
+                        type="email"
+                    />
+                </tui-input>
+            </label>
+            <label [tuiLabel]="'Имя'" class="tui-form__row">
+                <tui-input formControlName="firstName"
+                           tuiTextfieldSize="s"
+                           [tuiTextfieldCleaner]="true"
+                           [pseudoFocus]="getError(profileForm.controls.firstName)"
+                >
+                    Введите имя
+                    <input
+                        tuiTextfield
+                        type="email"
+                    />
+                </tui-input>
+            </label>
+            <label [tuiLabel]="'Фамилия'" class="tui-form__row">
+                <tui-input formControlName="lastName"
+                           tuiTextfieldSize="s"
+                           [tuiTextfieldCleaner]="true"
+                           [pseudoFocus]="getError(profileForm.controls.lastName)"
+                >
+                    Введите фамилию
+                    <input
+                        tuiTextfield
+                        type="email"
+                    />
+                </tui-input>
+            </label>
+            <label [tuiLabel]="'Телефон'" class="tui-form__row">
+                <tui-input-phone formControlName="phone"
+                                 tuiTextfieldSize="s"
+                                 [tuiTextfieldCleaner]="true"
+                                 [pseudoFocus]="getError(profileForm.controls.phone)"
+                >
+                    Введите номер телефона
+                    <input
+                        autocomplete="tel"
+                        tuiTextfield
+                    />
+                </tui-input-phone>
+            </label>
+            <label [tuiLabel]="'WebSite URL'" class="tui-form__row">
+                <tui-input formControlName="url"
+                           tuiTextfieldSize="s"
+                           [pattern]="urlRegExp"
+                           [tuiTextfieldCleaner]="true"
+                           [pseudoFocus]="getError(profileForm.controls.url)"
+                >
+                    Введите URL
+                    <input
+                        tuiTextfield
+                        type="email"
+                    />
+                </tui-input>
+            </label>
+            <div class="tui-form__row tui-form__buttons tui-form__buttons_align_center">
+            <button
+                tuiButton
+                tuiTextfieldSize="s"
+                type="button"
+                class="tui-form__button"
+                [appearance]="'primary'"
+                (click)="onSave()"
+            >
+                Подтвердить изменения
+            </button>
+            </div>
+        </div>
+    </div>
+</section>
