@@ -19,3 +19,8 @@ export const fakeUser: UserT = {
     phone: '+7123456789',
     url: 'www.test.com'
 }
+
+export type LoginBodyT = {
+    email: string,
+    password: string,
+}

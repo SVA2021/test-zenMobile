@@ -1,0 +1,49 @@
+<section class="full-page">
+    <div class="form-wrapper">
+        <h2 class="tui-form__header_margin-bottom_small tui-table__th_text_center">
+            Авторизация
+        </h2>
+        <div class="tui-form" [formGroup]="loginForm">
+            <label [tuiLabel]="'E-mail'" class="tui-form__row">
+                <tui-input
+                    formControlName="email"
+                    tuiTextfieldSize="s"
+                    [tuiTextfieldCleaner]="true"
+                    [pseudoFocus]="getError(loginForm.controls.email)"
+                >
+                    Введите email
+                    <input
+                        tuiTextfield
+                        type="email"
+                    />
+                </tui-input>
+            </label>
+            <label [tuiLabel]="'Пароль'" class="tui-form__row">
+                <tui-input-password
+                    formControlName="password"
+                    tuiTextfieldSize="s"
+                    [pseudoFocus]="getError(loginForm.controls.password)"
+                >
+                    Введите пароль
+                    <input
+                        placeholder="Не выключайте скрытый режим без необходимости!"
+                        tuiTextfield
+                    />
+                </tui-input-password>
+            </label>
+
+            <div class="tui-form__row tui-form__buttons tui-form__buttons_align_center">
+                <button
+                    tuiButton
+                    tuiTextfieldSize="s"
+                    type="button"
+                    class="tui-form__button"
+                    [appearance]="'primary'"
+                    (click)="onSave()"
+                >
+                    Войти
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
