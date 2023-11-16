@@ -6,8 +6,11 @@ import {LoginBodyT} from "@core/models";
 export class AuthService {
     public isAuth$ = new BehaviorSubject<boolean>(false);
 
+    isLogged: boolean = false;
+
     public login(body: LoginBodyT) {
         const isFakeAuthOk = Math.random() > 0.1;
+        this.isLogged = isFakeAuthOk;
         this.isAuth$.next(isFakeAuthOk);
         return of(isFakeAuthOk ? body : null);
     }

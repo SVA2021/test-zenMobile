@@ -7,7 +7,3 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
 }
-
-// TODO: add auth guard
-// TODO: check project
-// TODO: upload to github

@@ -2,6 +2,7 @@ import {ChangeDetectionStrategy, Component, Inject, OnInit} from '@angular/core'
 import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
 import {fakeUser, UserT} from "@core/models";
 import {TuiAlertService} from "@taiga-ui/core";
+import {LocalStorageService} from "@core/services/local-storage.service";
 
 @Component({
     selector: 'app-profile-page',
@@ -21,13 +22,15 @@ export class ProfilePageComponent implements OnInit {
         url: new FormControl<string | null>(null, [Validators.pattern(this.urlRegExp)]),
     })
 
-    constructor(@Inject(TuiAlertService) private readonly alerts: TuiAlertService) {
+    constructor(
+        @Inject(LocalStorageService) private readonly lsService: LocalStorageService,
+        @Inject(TuiAlertService) private readonly alerts: TuiAlertService
+    ) {
     }
 
 
     ngOnInit(): void {
-        //TODO: add get user from ls function
-        this.user = fakeUser;
+        this.user = this.lsService.getUserFromLs();
         this.setProfileFormValue();
     }
 
@@ -54,7 +57,14 @@ export class ProfilePageComponent implements OnInit {
                 .subscribe();
             return;
         }
-        //TODO: add save user to ls function
+        const body: UserT = {
+            firstName: this.profileForm.controls.firstName.value as string,
+            lastName: this.profileForm.controls.lastName.value as string,
+            email: this.profileForm.controls.email.value as string,
+            phone: this.profileForm.controls.phone.value as string,
+            url: this.profileForm.controls.url.value as string,
+        }
+        this.lsService.setUserToLs(body);
     }
 
     private setProfileFormValue(): void {
