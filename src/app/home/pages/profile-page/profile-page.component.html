@@ -83,5 +83,11 @@
             </button>
             </div>
         </div>
+        <h4 class="tui-space_top-4">
+            Текущие данные профиля
+        </h4>
+        <pre *ngIf="user">
+            {{ user | json }}
+        </pre>
     </div>
 </section>
